@@ -2,7 +2,6 @@
 import statistics as stats
 
 from code.StockData import StockData
-from decimal import Decimal
 
 class StockMetrics(StockData):
     def __init__(self, path):
