@@ -1,6 +1,6 @@
 # README
 
-Credit to the [Data Science Working Group](http://datascience.codeforsanfrancisco.org) for this template. To complete this project, delete all template text (save for the headers) and fill in your own information.
+Credit to the [Data Science Working Group](http://datascience.codeforsanfrancisco.org) for this template.
 
 
 ## Project Intro/Objective
