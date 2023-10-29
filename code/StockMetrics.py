@@ -16,19 +16,17 @@ class StockMetrics(StockData):
         """pt1
         """
         averages = []
-        for row in self.data:
-            # remove the first element which is the date
-            print(row[1:])
+        numeric_rows = [ val[1:] for val in self.data if (val != ' ' and val != '') ]
 
-            # remove spaces and empty strings
-            # examples:
-            # ' ' or ' 213.2' into '213.2'
-            #
-            # also format into 3 significant figures to pass validation
+        for row in numeric_rows:
 
-            numeric_rows = [ round(float(val.strip()), 3) for val in row[1:] if (val != ' ' and val != '')]
-            print(numeric_rows)
-            averages.append(sum(numeric_rows)/len(numeric_rows))
+            # compute average
+
+            cleaned_rows = [ float(val.strip()) for val in row if (val != ' ' and val != '') ]
+            length = len(cleaned_rows)
+
+            avg = sum(cleaned_rows) / length
+            averages.append(round(avg, 3))
 
         return averages
 
