@@ -16,7 +16,7 @@ class StockMetrics(StockData):
         """pt1
         """
         averages = []
-        numeric_rows = [ val[1:] for val in self.data if (val != ' ' and val != '') ]
+        numeric_rows = [ val[1:] for val in self.data ]
 
         for row in numeric_rows:
 
@@ -34,7 +34,7 @@ class StockMetrics(StockData):
         """pt2
         """
         medians = []
-        numeric_rows = [ val[1:] for val in self.data if (val != ' ' and val != '') ]
+        numeric_rows = [ val[1:] for val in self.data ]
         
         for row in numeric_rows:
             
@@ -58,7 +58,7 @@ class StockMetrics(StockData):
         """
 
         stddev = []
-        numeric_rows = [ val[1:] for val in self.data if (val != ' ' and val != '') ]
+        numeric_rows = [ val[1:] for val in self.data ]
 
         for row in numeric_rows:
 
