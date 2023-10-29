@@ -37,7 +37,6 @@ class StockMetrics(StockData):
         """pt2
         """
         medians = []
-        print(self.data)
         numeric_rows = [ val[1:] for val in self.data if (val != ' ' and val != '') ]
         
         for row in numeric_rows:
@@ -60,4 +59,24 @@ class StockMetrics(StockData):
     def stddev03(self):
         """pt3
         """
-        ...
+
+        stddev = []
+        numeric_rows = [ val[1:] for val in self.data if (val != ' ' and val != '') ]
+
+        for row in numeric_rows:
+
+            # calculate the average
+
+            cleaned_rows = [ float(val.strip()) for val in row if (val != ' ' and val != '') ]
+            length = len(cleaned_rows)
+
+            average = sum(cleaned_rows) / length
+
+            # compute std
+
+            std_computation_part1 = [(val - average)**2 for val in cleaned_rows]
+            std = (sum(std_computation_part1) / (length - 1))**(0.5)
+
+            stddev.append(round(std, 3))
+        
+        return stddev
